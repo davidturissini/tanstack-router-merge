@@ -1,3 +1,13 @@
+This is a demo project to show it is possible to merge several Tanstack Router route trees together while also keeping type safety in-tact.
+
+There are 3 packages in this repo:
+- app
+- child-a
+- child-b
+
+`app` defines the "root" route that will be used at runtime. `child-a` and `child-b` both define and export their own route trees. These trees are then "merged" in `packages/app/src/routeTree.ts` and in `packages/app/src/router.tsx`.
+
+
 ## Install all deps
 
 ```
