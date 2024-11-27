@@ -1,0 +1,14 @@
+{
+  "version": "0.0.1",
+  "name": "child-b",
+  "exports": {
+    ".": {
+      "types": "./dist/.tanstack-router/routeTree.gen.ts",
+      "default": "./dist/.tanstack-router/routeTree.gen.ts"
+    }
+  },
+  "dependencies": {},
+  "scripts": {
+    "build": "tsr generate"
+  }
+}
