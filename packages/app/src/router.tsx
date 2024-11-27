@@ -1,15 +1,8 @@
 import { createRouter, Link } from '@tanstack/react-router';
-import { routeTree, type FileRouteTypes } from './routeTree';
-import { routeTree as childARouteTree } from 'child-a';
-import { routeTree as childBRouteTree } from 'child-b';
-
-
+import { routeTree } from './routeTree';
 
 const router = createRouter({ 
-  routeTree: childARouteTree
-    ._addFileChildren(childBRouteTree.children)
-    ._addFileChildren(routeTree.children)
-    ._addFileTypes<FileRouteTypes>()
+  routeTree
 });
 
 declare module '@tanstack/react-router' {
@@ -17,7 +10,6 @@ declare module '@tanstack/react-router' {
     router: typeof router
   }
 }
-
 
 /* There should be no type errors in this component */
 export function ComponentWithLinks() {
